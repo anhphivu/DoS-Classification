@@ -1,0 +1,50 @@
+# Group 22
+
+# Group leader: student number, username, name
+
+1266276, anhphiv, Anh Phi Vu
+
+# Members: student number, username, name
+
+1266276, anhphiv, Anh Phi Vu
+1044578, icche, Ian Chen
+1266341, ngocnhuquynh, Ngoc Nhu Quynh Ho
+1328158, tinshen, Shen Ti Na
+
+# Introduction of intended use for code
+
+The code, in the notebook main.ipynb, is used to perform pre-processing + analysis
+with supervised learning techniques. It also outputs various useful plots.
+
+# File structure and use of each file
+
+project_group22.pdf: the report
+main.ipynb: A Jupyter Notebook containing all code for pre-processing + supervised learning analysis + plotting.
+main_copy.ipynb: a copy of main.ipynb in case you want to look at figures + plots while you verify that the code in main.ipynb works.
+
+Folders for plots:
+out_full/**: results of testing on full range of hyperparameters. These plots are generated for the report.
+out_static/**: a frozen copy of out_full. This contains the plots that are included in the report PDF.
+out_fast/**: results of testing on a limited range of hyperparameters. Some plots will not be useful e.g. comparing performance across hyperparameters in KNN.
+
+# Instructions on how to run your code.
+
+There is a full mode which takes longer to run than the fast mode.
+
+Set full = True to test the entire range of hyperparameters to tune. 
+This will take approx 14 minutes to run on Ed. 
+Please keep the Ed window in the foregound to prevent it from sleeping. 
+Around 10 minutes of this cost comes from tuning the optimum number of features 
+by using top-k features mutual selection feature selection for each fold 
+to prevent data leakage 
+at the cost of longer computation time. 
+That's (28-2+1) * 5 = 135 times that we attempt to select the top k MIs 
+- with many more mutual information calculations than that!
+
+Set full = False to only test a limited range of hyperparameters 
+near the optimum that we have determined. 
+This will take ~ 4 minutes to run on Ed.
+
+After setting 'full' to the desired value, click 'Run All' to generate the plots.
+
+# Any additional requirements needed to run code.
